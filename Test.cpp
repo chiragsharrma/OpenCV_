@@ -6,22 +6,30 @@
 using namespace cv;
 using namespace std;
 
+//importing images
 
+//void main() {
+//	string path = "Resources/test.png";
+//	Mat img = imread(path);
+//	imshow("image", img);
+//	waitKey(0);
+//
+//
+//}
 
-///////////////// Images ////////////////////// 
+//VIDEO PART
 
+void main() {
 
+	string path = "Resources/test_video.mp4";
+	VideoCapture cap(path);
+	Mat img;
 
+	while (true) {
 
-int main() 
-{
-	
-string path = "Resources/test.png";
-Mat img = imread(path);
-imshow("Image", img);
-waitKey(0);
-return 0;
+		cap.read(img);
+		imshow("Image", img);
+		waitKey(1);
 
-
-
+	}
 }
